@@ -110,7 +110,7 @@ function factory ( customOptions?: Partial<typeof defaultOptions> ) {
           } else {
 
             actions.push ( () => rollbackHistory ( remoteCommit.hash ) );
-            confirmations.push ( `Rolling back ${removeCommits.length} commits:\n${removeCommits.map ( commit => `- ${parseMessage ( commit.message )}` ).join ( '\n' )}` );
+            confirmations.push ( `Rolling back ${removeCommits.length} commits:\n${removeCommits.map ( commit => `  ${parseMessage ( commit.message )}` ).join ( '\n' )}` );
 
           }
 
@@ -132,7 +132,7 @@ function factory ( customOptions?: Partial<typeof defaultOptions> ) {
       } else {
 
         actions.push ( rollbackWorkingTree );
-        confirmations.push ( `Rolling back ${files.length} files:\n${files.map ( file => `- ${file}` ).join ( '\n' )}` );
+        confirmations.push ( `Rolling back ${files.length} files:\n${files.map ( file => `  ${file}` ).join ( '\n' )}` );
 
       }
 
